@@ -9,4 +9,14 @@ users=[
 	{"id":7, "name": "Devin"},
 	{"id":8, "name": "Kate"},
 	{"id":9, "name": "Klein"},
-]
+	]
+
+friendships=[(0,1),(0,2),(1,2),(1,3),(2,3),(3,4),(4,5),(5,6),(5,7),(6,8),(7,8),(8,9)]
+
+for user in users:
+	user["friends"]=[]
+
+for i, j in friendships:
+	#this works because user[1] is the user whose id is i
+	users[i]["friends"].append(users[j])
+	users[j]["friends"].append(users[i])
